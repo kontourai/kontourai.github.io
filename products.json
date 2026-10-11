@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "products": [
+    {
+      "product": "docs-kit",
+      "repo": "kontourai/docs-kit"
+    },
+    {
+      "product": "station",
+      "repo": "kontourai/station"
+    },
+    {
+      "product": "flow",
+      "repo": "kontourai/flow"
+    },
+    {
+      "product": "flow-agents",
+      "repo": "kontourai/flow-agents"
+    },
+    {
+      "product": "veritas",
+      "repo": "kontourai/veritas"
+    },
+    {
+      "product": "survey",
+      "repo": "kontourai/survey"
+    },
+    {
+      "product": "surface",
+      "repo": "kontourai/surface"
+    },
+    {
+      "product": "console",
+      "repo": "kontourai/console"
+    },
+    {
+      "product": "ui",
+      "repo": "kontourai/ui"
+    },
+    {
+      "product": "aidlc-kit",
+      "repo": "kontourai/aidlc-kit"
+    },
+    {
+      "product": "bearing",
+      "repo": "kontourai/bearing"
+    },
+    {
+      "product": "conduit",
+      "repo": "kontourai/conduit"
+    },
+    {
+      "product": "datum",
+      "repo": "kontourai/datum"
+    },
+    {
+      "product": "dispatch",
+      "repo": "kontourai/dispatch"
+    },
+    {
+      "product": "ephemeris",
+      "repo": "kontourai/ephemeris"
+    },
+    {
+      "product": "fieldwork",
+      "repo": "kontourai/fieldwork"
+    },
+    {
+      "product": "forage",
+      "repo": "kontourai/forage"
+    },
+    {
+      "product": "lookout",
+      "repo": "kontourai/lookout"
+    },
+    {
+      "product": "plumb",
+      "repo": "kontourai/plumb"
+    },
+    {
+      "product": "relay",
+      "repo": "kontourai/relay"
+    },
+    {
+      "product": "traverse",
+      "repo": "kontourai/traverse"
+    }
+  ]
+}

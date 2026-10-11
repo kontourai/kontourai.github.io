@@ -44,7 +44,7 @@ jobs:
     timeout-minutes: 10
     concurrency:
       group: hub-pages
-      cancel-in-progress: true
+      cancel-in-progress: false
     permissions:
       pages: write
       id-token: write

@@ -15,7 +15,7 @@ permissions:
   contents: read
 
 env:
-  DOCS_KIT_REF: 6945efbe0309bc46ce4efafe0fccaff9b3302603 # @kontourai/docs-kit v0.4.0
+  DOCS_KIT_REF: 27cd43ded8c6e2e591d85d1d65bff31b3ae92e24 # @kontourai/docs-kit v0.5.0
 
 jobs:
   build:

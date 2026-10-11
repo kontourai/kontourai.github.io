@@ -23,7 +23,7 @@ finishes, the hub shows it as unpublished.
 The aggregate docs MCP serves every product listed here:
 
 ```bash
-claude mcp add kontour-docs -- npx -y github:kontourai/docs-kit#3c9cf686ddfe0baf14862748db04e661607f8d9a docs-kit mcp
+claude mcp add kontour-docs -- npx -y github:kontourai/docs-kit#efe0bfe4ad247861ef661c907f6354d6167fa3be docs-kit mcp
 ```
 
 Use `docs-kit mcp --workspace <dir-with-checkouts>` instead to read unpublished

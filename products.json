@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "products": [
     {
-      "product": "docs-kit",
-      "repo": "kontourai/docs-kit"
+      "product": "corpus",
+      "repo": "kontourai/corpus"
     },
     {
       "product": "station",

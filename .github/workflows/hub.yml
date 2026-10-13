@@ -31,7 +31,7 @@ jobs:
       - name: Build hub
         run: npx -y "github:kontourai/corpus#${CORPUS_REF}" hub --products products.json --out dist-hub
       - name: Add legacy docs-kit paths
-        run: node scripts/add-legacy-paths.mjs
+        run: cp -R legacy/docs-kit dist-hub/docs-kit
       - if: github.event_name != 'pull_request'
         uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
       - if: github.event_name != 'pull_request'

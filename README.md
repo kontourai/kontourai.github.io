@@ -33,7 +33,7 @@ docs from local checkouts.
 
 ```bash
 npx -y github:kontourai/corpus#b978eed765a52335183386d7996fa295bbfd821f corpus hub --products products.json --out dist-hub
-node scripts/add-legacy-paths.mjs
+cp -R legacy/docs-kit dist-hub/docs-kit
 ```
 
 The hub and aggregate MCP resolve bundle URLs by **product**, so the Corpus
@@ -44,18 +44,13 @@ The build copies committed HTML redirects from `legacy/docs-kit/` into
 document pages. Each has a meta refresh, canonical link, and ordinary link to
 the corresponding Corpus page; JavaScript preserves query strings and fragments.
 
-JSON fetch clients cannot follow an HTML meta refresh. The build therefore
-fetches the live Corpus bundle and writes a compatibility snapshot at
-`/docs-kit/docs-bundle.json`: it projects to schema v1 and retains the legacy `docs-kit` product/repo
-identity required by older aggregate MCP product lists, while pointing page
-URLs to `/corpus/`. Content, source revision, and digest stay as published.
-Schema v2-only `purpose` and `builtOn` metadata is omitted from the legacy
-snapshot. Older CLI pins do not support v2 bundles; upgrade to the install pin
-above to consume the new product list. This snapshot supports clients still
-using the old docs-kit product list and refreshes on hub builds, not on every
-Corpus deployment. During
-the transition the script also accepts the published v1 docs-kit identity at
-`/corpus/` and rewrites its page URLs to the canonical path.
+Old MCP pins in hub mode read the live `products.json` and then fetch each
+product's bundle. Once this list names `corpus`, they fetch
+`/corpus/docs-bundle.json`; nothing requests `/docs-kit/docs-bundle.json`.
+Old pins reject the schema v2 bundle and lose Corpus. They must move to
+`github:kontourai/corpus#b978eed765a52335183386d7996fa295bbfd821f corpus mcp`,
+as shown in the install command above. The legacy paths redirect HTML pages
+only.
 
 **Merge order:** merge the Corpus own-manifest v2 PR first, wait for its Pages
 deploy, and confirm `/corpus/docs-bundle.json` declares `product: corpus` and

@@ -9,9 +9,11 @@ if (![1, 2].includes(bundle.schemaVersion) || !['corpus', 'docs-kit'].includes(b
   throw new Error('Expected a published Corpus documentation bundle');
 }
 
-// Older aggregate MCP lists validate the legacy product identity.
+// Older aggregate MCP pins accept only schema v1 and the legacy identity.
+const { purpose, builtOn, ...v1 } = bundle;
 const legacy = {
-  ...bundle,
+  ...v1,
+  schemaVersion: 1,
   product: 'docs-kit',
   repo: 'kontourai/docs-kit',
   siteUrl: canonicalBase,

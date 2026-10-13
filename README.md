@@ -46,10 +46,14 @@ the corresponding Corpus page; JavaScript preserves query strings and fragments.
 
 JSON fetch clients cannot follow an HTML meta refresh. The build therefore
 fetches the live Corpus bundle and writes a compatibility snapshot at
-`/docs-kit/docs-bundle.json`: it retains the legacy `docs-kit` product/repo
+`/docs-kit/docs-bundle.json`: it projects to schema v1 and retains the legacy `docs-kit` product/repo
 identity required by older aggregate MCP product lists, while pointing page
 URLs to `/corpus/`. Content, source revision, and digest stay as published.
-This snapshot refreshes on hub builds, not on every Corpus deployment. During
+Schema v2-only `purpose` and `builtOn` metadata is omitted from the legacy
+snapshot. Older CLI pins do not support v2 bundles; upgrade to the install pin
+above to consume the new product list. This snapshot supports clients still
+using the old docs-kit product list and refreshes on hub builds, not on every
+Corpus deployment. During
 the transition the script also accepts the published v1 docs-kit identity at
 `/corpus/` and rewrites its page URLs to the canonical path.
 

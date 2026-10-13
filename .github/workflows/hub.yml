@@ -3,7 +3,7 @@ name: Hub
 # Builds the org docs hub from products.json. The hub page loads each
 # product's docs-bundle.json in the browser, so it stays current without a
 # rebuild whenever a product deploys; this only needs to run when the product
-# list or the hub template (the docs-kit pin) changes.
+# list or the hub template (the Corpus pin) changes.
 
 on:
   pull_request:
@@ -15,7 +15,7 @@ permissions:
   contents: read
 
 env:
-  DOCS_KIT_REF: bc158849c27e55d25417c443ad6bbd0643dfdbc4 # @kontourai/docs-kit v0.6.0
+  CORPUS_REF: b978eed765a52335183386d7996fa295bbfd821f # @kontourai/corpus v0.6.0
 
 jobs:
   build:
@@ -29,7 +29,9 @@ jobs:
         with:
           node-version: 24
       - name: Build hub
-        run: npx -y "github:kontourai/docs-kit#${DOCS_KIT_REF}" hub --products products.json --out dist-hub
+        run: npx -y "github:kontourai/corpus#${CORPUS_REF}" hub --products products.json --out dist-hub
+      - name: Add legacy docs-kit paths
+        run: cp -R legacy/docs-kit dist-hub/docs-kit
       - if: github.event_name != 'pull_request'
         uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
       - if: github.event_name != 'pull_request'

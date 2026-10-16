@@ -15,7 +15,7 @@ permissions:
   contents: read
 
 env:
-  CORPUS_REF: b978eed765a52335183386d7996fa295bbfd821f # @kontourai/corpus v0.6.0
+  CORPUS_REF: b8ecf4cd4c6482bb804cdeea617ebe2d9b78ab05 # Corpus 0.7 source; current v2 bundles and narrow-page renderer
 
 jobs:
   build:

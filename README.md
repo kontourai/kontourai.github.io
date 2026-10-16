@@ -57,3 +57,11 @@ deploy, and confirm `/corpus/docs-bundle.json` declares `product: corpus` and
 `repo: kontourai/corpus`. Then merge and deploy this hub change. The new
 aggregate MCP validates product identity and rejects the transitional docs-kit
 bundle when fetched for `corpus`, even though the browser card can display it.
+
+## Catalog scope
+
+The public catalog includes Thread/Ferry's conversation contracts and the
+experimental Research Kit. Each product page owns its lifecycle and evidence
+limits; catalog inclusion does not certify runtime execution or publication.
+Private repositories keep their documentation manifests and local MCP sources
+inside their own access boundary and are not fetched by this public hub.

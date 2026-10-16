@@ -1,7 +1,7 @@
 # Kontour docs hub
 
-Source for <https://kontourai.github.io/>, the index of every Kontour product's
-documentation.
+Source for <https://kontourai.github.io/>, the current documentation index for the
+products listed in [`products.json`](products.json).
 
 Each product publishes its own site and `docs-bundle.json` to
 `https://kontourai.github.io/<repo>/` with
@@ -11,6 +11,18 @@ Each product publishes its own site and `docs-bundle.json` to
 The hub page reads those bundles in the browser, so it shows each product's
 published commit, whether that commit is the current `main`, and whether the
 docs are still thin, without rebuilding here.
+
+## Scope and other public documentation
+
+This index fetches only the products listed in `products.json`; it does not
+establish complete portfolio coverage or package/runtime qualification. Each
+owning repository documents its supported paths and publication limits.
+
+[Thread and Ferry](https://github.com/kontourai/thread/blob/main/docs/README.md)
+currently have documentation in their public repository. Use that route while
+hub catalog and bundle publication are completed by their existing owners.
+Private documentation stays within its own access boundary and is not fetched
+by this public index.
 
 ## Add a product
 

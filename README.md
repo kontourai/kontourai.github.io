@@ -18,11 +18,11 @@ This index fetches only the products listed in `products.json`; it does not
 establish complete portfolio coverage or package/runtime qualification. Each
 owning repository documents its supported paths and publication limits.
 
-[Thread and Ferry](https://github.com/kontourai/thread/blob/main/docs/README.md)
-currently have documentation in their public repository. Use that route while
-hub catalog and bundle publication are completed by their existing owners.
-Private documentation stays within its own access boundary and is not fetched
-by this public index.
+[Thread and Ferry](https://kontourai.github.io/thread/) and the experimental
+[Research Kit](https://kontourai.github.io/kit-research/) publish source-bound
+documentation and bundles. This catalog includes both; each card reports the
+deployed revision and whether it trails source. Private documentation stays
+within its own access boundary and is not fetched by this public index.
 
 ## Add a product
 

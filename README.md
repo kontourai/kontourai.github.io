@@ -18,11 +18,11 @@ This index fetches only the products listed in `products.json`; it does not
 establish complete portfolio coverage or package/runtime qualification. Each
 owning repository documents its supported paths and publication limits.
 
-[Thread and Ferry](https://github.com/kontourai/thread/blob/main/docs/README.md)
-currently have documentation in their public repository. Use that route while
-hub catalog and bundle publication are completed by their existing owners.
-Private documentation stays within its own access boundary and is not fetched
-by this public index.
+[Thread and Ferry](https://kontourai.github.io/thread/) and the experimental
+[Research Kit](https://kontourai.github.io/kit-research/) publish source-bound
+documentation and bundles. This catalog includes both; each card reports the
+deployed revision and whether it trails source. Private documentation stays
+within its own access boundary and is not fetched by this public index.
 
 ## Add a product
 
@@ -35,7 +35,7 @@ finishes, the hub shows it as unpublished.
 The aggregate docs MCP serves every product listed here:
 
 ```bash
-claude mcp add kontour-docs -- npx -y github:kontourai/corpus#b978eed765a52335183386d7996fa295bbfd821f corpus mcp
+claude mcp add kontour-docs -- npx -y github:kontourai/corpus#b8ecf4cd4c6482bb804cdeea617ebe2d9b78ab05 corpus mcp
 ```
 
 Use `corpus mcp --workspace <dir-with-checkouts>` instead to read unpublished
@@ -44,7 +44,7 @@ docs from local checkouts.
 ## Build and legacy paths
 
 ```bash
-npx -y github:kontourai/corpus#b978eed765a52335183386d7996fa295bbfd821f corpus hub --products products.json --out dist-hub
+npx -y github:kontourai/corpus#b8ecf4cd4c6482bb804cdeea617ebe2d9b78ab05 corpus hub --products products.json --out dist-hub
 cp -R legacy/docs-kit dist-hub/docs-kit
 ```
 
@@ -60,7 +60,7 @@ Old MCP pins in hub mode read the live `products.json` and then fetch each
 product's bundle. Once this list names `corpus`, they fetch
 `/corpus/docs-bundle.json`; nothing requests `/docs-kit/docs-bundle.json`.
 Old pins reject the schema v2 bundle and lose Corpus. They must move to
-`github:kontourai/corpus#b978eed765a52335183386d7996fa295bbfd821f corpus mcp`,
+`github:kontourai/corpus#b8ecf4cd4c6482bb804cdeea617ebe2d9b78ab05 corpus mcp`,
 as shown in the install command above. The legacy paths redirect HTML pages
 only.
 
@@ -69,3 +69,11 @@ deploy, and confirm `/corpus/docs-bundle.json` declares `product: corpus` and
 `repo: kontourai/corpus`. Then merge and deploy this hub change. The new
 aggregate MCP validates product identity and rejects the transitional docs-kit
 bundle when fetched for `corpus`, even though the browser card can display it.
+
+## Catalog scope
+
+The public catalog includes Thread/Ferry's conversation contracts and the
+experimental Research Kit. Each product page owns its lifecycle and evidence
+limits; catalog inclusion does not certify runtime execution or publication.
+Private repositories keep their documentation manifests and local MCP sources
+inside their own access boundary and are not fetched by this public hub.

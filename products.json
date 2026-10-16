@@ -88,6 +88,14 @@
     {
       "product": "cli",
       "repo": "kontourai/cli"
+    },
+    {
+      "product": "thread",
+      "repo": "kontourai/thread"
+    },
+    {
+      "product": "kit-research",
+      "repo": "kontourai/kit-research"
     }
   ]
 }
